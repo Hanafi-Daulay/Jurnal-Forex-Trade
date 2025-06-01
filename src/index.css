@@ -83,7 +83,7 @@
   }
 
   .card-description {
-    @apply text-sm text-gray-100;
+    @apply text-sm text-text-muted;
   }
 
   .card-content {
