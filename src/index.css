@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 10 36 99; /* Navy blue */
+    --color-primary-light: 41 70 143;
+    --color-secondary: 255 215 0; /* Gold */
+    --color-secondary-light: 255 223 66;
+    --color-accent: 79 151 210; /* Sky blue */
+    --color-success: 34 197 94;
+    --color-warning: 234 179 8;
+    --color-error: 239 68 68;
+    --color-background: 248 250 252;
+    --color-foreground: 255 255 255;
+    --color-text: 15 23 42;
+    --color-text-muted: 100 116 139;
+    --color-border: 226 232 240;
+  }
+
+  .dark {
+    --color-primary: 41 70 143; /* Lighter navy for dark mode */
+    --color-primary-light: 58 93 174;
+    --color-secondary: 255 223 66; /* Brighter gold for dark mode */
+    --color-secondary-light: 255 230 107;
+    --color-accent: 56 139 209;
+    --color-success: 34 197 94;
+    --color-warning: 234 179 8;
+    --color-error: 239 68 68;
+    --color-background: 15 23 42;
+    --color-foreground: 30 41 59;
+    --color-text: 248 250 252;
+    --color-text-muted: 148 163 184;
+    --color-border: 51 65 85;
+  }
+
+  body {
+    @apply bg-background text-text antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors 
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 
+    disabled:pointer-events-none ring-offset-background;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-light;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-primary hover:bg-secondary-light;
+  }
+
+  .btn-outline {
+    @apply border border-border bg-transparent hover:bg-accent hover:text-text;
+  }
+
+  .btn-ghost {
+    @apply hover:bg-accent hover:text-text;
+  }
+
+  .input {
+    @apply flex h-10 w-full rounded-md border border-border bg-transparent px-3 py-2 text-sm 
+    placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary disabled:cursor-not-allowed 
+    disabled:opacity-50;
+  }
+
+  .card {
+    @apply rounded-lg border border-border bg-foreground shadow-sm;
+  }
+
+  .card-header {
+    @apply flex flex-col space-y-1.5 p-6;
+  }
+
+  .card-title {
+    @apply text-lg font-semibold leading-none tracking-tight;
+  }
+
+  .card-description {
+    @apply text-sm text-text-muted;
+  }
+
+  .card-content {
+    @apply p-6 pt-0;
+  }
+
+  .card-footer {
+    @apply flex items-center p-6 pt-0;
+  }
+}
